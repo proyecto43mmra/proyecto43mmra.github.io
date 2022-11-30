@@ -7,15 +7,15 @@ import {
   muestraError
 } from "../lib/util.js";
 import {
-  muestraAlumnos
+  muestraMascotas
 } from "./navegacion.js";
 import {
   tieneRol
 } from "./seguridad.js";
 
-const daoAlumno =
+const daoMascota =
   getFirestore().
-    collection("Alumno");
+    collection("Mascota");
 const params =
   new URL(location.href).
     searchParams;
@@ -41,14 +41,14 @@ async function protege(usuario) {
 async function busca() {
   try {
     const doc =
-      await daoAlumno.
+      await daoMascota.
         doc(id).
         get();
     if (doc.exists) {
       /**
        * @type {
           import("./tipos.js").
-                  Alumno} */
+                  Mascota} */
       const data = doc.data();
       forma.matricula.value = data.matricula;
       forma.nombre.value = data.nombre || "";
@@ -66,7 +66,7 @@ async function busca() {
     }
   } catch (e) {
     muestraError(e);
-    muestraAlumnos();
+    muestraMascotas();
   }
 }
 
@@ -85,7 +85,7 @@ async function guarda(evt) {
     /**
      * @type {
         import("./tipos.js").
-                Alumno} */
+                Mascota} */
     const modelo = {
       matricula, 
       nombre,
@@ -93,10 +93,10 @@ async function guarda(evt) {
       grupo,
       fecha
     };
-    await daoAlumno.
+    await daoMascota.
       doc(id).
       set(modelo);
-    muestraAlumnos();
+    muestraMascotas();
   } catch (e) {
     muestraError(e);
   }
@@ -106,10 +106,10 @@ async function elimina() {
   try {
     if (confirm("Confirmar la " +
       "eliminación")) {
-      await daoAlumno.
+      await daoMascota.
         doc(id).
         delete();
-      muestraAlumnos();
+      muestraMascotas();
     }
   } catch (e) {
     muestraError(e);
