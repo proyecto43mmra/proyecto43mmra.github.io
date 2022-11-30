@@ -50,9 +50,9 @@ async function busca() {
           import("./tipos.js").
                   Mascota} */
       const data = doc.data();
-      forma.matricula.value = data.matricula;
+      forma.animal.value = data.animal;
       forma.nombre.value = data.nombre || "";
-      forma.telefono.value = data.telefono || "";
+      forma.peso.value = data.peso || "";
       forma.grupo.value = data.grupo || "";
       forma.nacimiento.value = data.nacimiento || "";
       forma.addEventListener(
@@ -76,10 +76,10 @@ async function guarda(evt) {
     evt.preventDefault();
     const formData =
       new FormData(forma);
-    const matricula = getString(
-        formData, "matricula").trim();  
+    const animal = getString(
+        formData, "animal").trim();  
     const nombre = getString(formData, "nombre").trim();
-    const telefono = getString(formData, "telefono").trim();
+    const peso = getString(formData, "peso").trim();
     const grupo = getString(formData, "grupo").trim();
     const nacimiento = getString(formData, "nacimiento").trim();
     /**
@@ -87,9 +87,9 @@ async function guarda(evt) {
         import("./tipos.js").
                 Mascota} */
     const modelo = {
-      matricula, 
+      animal, 
       nombre,
-      telefono,
+      peso,
       grupo,
       nacimiento
     };

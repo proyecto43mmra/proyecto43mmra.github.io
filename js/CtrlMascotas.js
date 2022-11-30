@@ -66,7 +66,7 @@ function htmlFila(doc) {
    * @type {import("./tipos.js").
                   Mascota} */
   const data = doc.data();
-  const matricula = cod(data.matricula);
+  const animal = cod(data.animal);
   const nombre = cod(data.nombre);
   var fsf= cod(data.nacimiento);
   var nacimiento = new Date(fsf);
@@ -80,7 +80,7 @@ function htmlFila(doc) {
       <a class="fila" href=
   "mascota.html?${parámetros}">
         <strong class="primario">
-          ${matricula} ${nombre} ${dformat}
+          ${animal} ${nombre} ${dformat}
         </strong>
       </a>
      
