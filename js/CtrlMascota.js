@@ -54,7 +54,7 @@ async function busca() {
       forma.nombre.value = data.nombre || "";
       forma.telefono.value = data.telefono || "";
       forma.grupo.value = data.grupo || "";
-      forma.fecha.value = data.fecha || "";
+      forma.nacimiento.value = data.nacimiento || "";
       forma.addEventListener(
         "submit", guarda);
       forma.eliminar.
@@ -81,7 +81,7 @@ async function guarda(evt) {
     const nombre = getString(formData, "nombre").trim();
     const telefono = getString(formData, "telefono").trim();
     const grupo = getString(formData, "grupo").trim();
-    const fecha = getString(formData, "fecha").trim();
+    const nacimiento = getString(formData, "nacimiento").trim();
     /**
      * @type {
         import("./tipos.js").
@@ -91,7 +91,7 @@ async function guarda(evt) {
       nombre,
       telefono,
       grupo,
-      fecha
+      nacimiento
     };
     await daoMascota.
       doc(id).

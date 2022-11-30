@@ -68,10 +68,10 @@ function htmlFila(doc) {
   const data = doc.data();
   const matricula = cod(data.matricula);
   const nombre = cod(data.nombre);
-  var fsf= cod(data.fecha);
-  var fecha = new Date(fsf);
+  var fsf= cod(data.nacimiento);
+  var nacimiento = new Date(fsf);
   var espacio="[   -   ]";
-  var dformat = [fecha.getDate()+1, fecha.getMonth()+1, fecha.getFullYear()].join('/');
+  var dformat = [nacimiento.getDate()+1, nacimiento.getMonth()+1, nacimiento.getFullYear()].join('/');
   const parámetros =
     new URLSearchParams();
   parámetros.append("id", doc.id);

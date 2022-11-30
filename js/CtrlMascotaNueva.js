@@ -43,7 +43,7 @@ async function guarda(evt) {
     const nombre = getString(formData, "nombre").trim();
     const telefono = getString(formData, "telefono").trim();
     const grupo = getString(formData, "grupo").trim();
-    const fecha = getString(formData, "fecha").trim();
+    const nacimiento = getString(formData, "nacimiento").trim();
     /**
      * @type {
         import("./tipos.js").
@@ -53,7 +53,7 @@ async function guarda(evt) {
       nombre,
       telefono,
       grupo,
-      fecha 
+      nacimiento 
     };
     await daoMascota.
       add(modelo);
