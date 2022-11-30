@@ -1,7 +1,7 @@
 export function
   muestraAlumnos() {
   location.href =
-    "alumnos.html";
+    "mascotas.html";
 }
 
 export function

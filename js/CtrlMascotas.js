@@ -78,7 +78,7 @@ function htmlFila(doc) {
   return ( /* html */
     `<li>
       <a class="fila" href=
-  "alumno.html?${parámetros}">
+  "mascota.html?${parámetros}">
         <strong class="primario">
           ${matricula} ${nombre} ${dformat}
         </strong>
