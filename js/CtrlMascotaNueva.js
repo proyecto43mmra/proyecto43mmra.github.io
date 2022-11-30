@@ -42,7 +42,7 @@ async function guarda(evt) {
         formData, "animal").trim();  
     const nombre = getString(formData, "nombre").trim();
     const peso = getString(formData, "peso").trim();
-    const grupo = getString(formData, "grupo").trim();
+    const raza = getString(formData, "raza").trim();
     const nacimiento = getString(formData, "nacimiento").trim();
     /**
      * @type {
@@ -52,7 +52,7 @@ async function guarda(evt) {
       animal,
       nombre,
       peso,
-      grupo,
+      raza,
       nacimiento 
     };
     await daoMascota.

@@ -53,7 +53,7 @@ async function busca() {
       forma.animal.value = data.animal;
       forma.nombre.value = data.nombre || "";
       forma.peso.value = data.peso || "";
-      forma.grupo.value = data.grupo || "";
+      forma.raza.value = data.raza || "";
       forma.nacimiento.value = data.nacimiento || "";
       forma.addEventListener(
         "submit", guarda);
@@ -80,7 +80,7 @@ async function guarda(evt) {
         formData, "animal").trim();  
     const nombre = getString(formData, "nombre").trim();
     const peso = getString(formData, "peso").trim();
-    const grupo = getString(formData, "grupo").trim();
+    const raza = getString(formData, "raza").trim();
     const nacimiento = getString(formData, "nacimiento").trim();
     /**
      * @type {
@@ -90,7 +90,7 @@ async function guarda(evt) {
       animal, 
       nombre,
       peso,
-      grupo,
+      raza,
       nacimiento
     };
     await daoMascota.
